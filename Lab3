@@ -1,0 +1,36 @@
+Ubuntu server (user01:root)
+sudo apt install telnetd -y 
+
+(change to bridged adapter)
+
+*********iptables setup********
+
+1. check you current filter table rules (should be blank)
+sudo iptables -nvL
+
+2. On an seperate machine, telnet into the server 
+telnet IP 
+exit
+
+3. Now switch back to the VM, we are going to drop packets going to telnet (port 23) 
+sudo iptables -A INPUT -p tcp --dport 23 -j DROP
+  **Since this is on the INPUT chain, only telnet packets coming from the outside will be dropped
+  
+Start a TCPdump to view the incoming icmp traffic for next question
+sudo tcpdump icmp
+  
+4. Now ping the virtual machine 
+ping IP 
+
+**view echo requests/replies
+5. Drop packets based on packet type
+ctrl+C tcpdump
+sudo iptables -A INPUT -p icmp -j DROP
+sudo tcpdump icmp
+
+6. Try to ping the machine again
+ping IP 
+
+7. view tcpdump sending echo requests (Coming in) but no repies (Not going out)
+
+8. Now block output aswell
