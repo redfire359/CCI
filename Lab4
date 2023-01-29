@@ -36,3 +36,22 @@ uncomment port line and change it to 2323
 sudo systemctl restart ssh
 
 Exit the server
+
+**Attacker simulator**
+ssh root@IP
+enter any password, it will be accepted b/c you are entering the honeypot server
+type some commands and see if anything seems unusual (it shouldn't, it will act like a normal server
+exit the server 
+
+ssh user01@IP -p 2323
+sudo su - cowrie
+cd /cowrie/var/log/cowrie
+cat cowrie.log 
+  **analyze the file, see that their commands within the honeypot server was logged there
+ cd /cowrie/var/lib/cowrie/tty
+ ls
+ ~/cowrie/bin/playlog LOGFILE
+  **attackers commands will replay 
+  
+Let the user look at cowrie documentation and lab is completed 
+https://github.com/cowrie/cowrie
