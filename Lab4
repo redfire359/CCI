@@ -1,12 +1,12 @@
-**Setup, not needed for actual user**
-Install ubuntu server (user01:root)
-Actual ssh port: 2223
+LAB 4 Objectives
+-installing a github based utility through git cloning
+-setting up cowrie, a ssh/telnet based honeypot used against bruteforce attacks
+-view attacking a honeypot from an attackers perspective
+-analyzing an an attackers actions within a honeypot after they "compromised" the server
 
-fake port is on port 22
+LAB 4 Setup
+create user01
 
-User will login to port 22 "hacking" it with credentials
-let them check it out
-(Flag is to submit the user? 
 
 **Honeypot setup tutorial**
 
