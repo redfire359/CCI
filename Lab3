@@ -44,6 +44,9 @@ cat /var/log/syslog | grep iptables
 
 9. Saving iptables
 iptables-save | sudo tee /etc/iptables/rules.v4
-**reboot the server and see that the rules have been restored
+iptables -nvL
+iptables -F
+iptables -nvL
 iptables-restore /etc/iptables/rules.v4
+This is mainly used when a server reboots and the ip rules are no longer in place, since iptables is not persistent
 
