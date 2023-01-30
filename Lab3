@@ -50,3 +50,20 @@ iptables -nvL
 iptables-restore /etc/iptables/rules.v4
 This is mainly used when a server reboots and the ip rules are no longer in place, since iptables is not persistent
 
+
+
+*********http server setup********
+sudo apt install apache2 -y
+sudo ufw app list
+sudo ufw allow 'Apache'
+sudo ufw enable
+sudo ufw status
+sudo systemctl status apache2
+*press q to quit
+
+hostname -I to get your IP address
+open your Kali  VM and type in the IP address, coming to the apache webpage
+
+
+
+
