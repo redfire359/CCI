@@ -1,6 +1,16 @@
-install telnet
-install vsftp (disable anonymous login)
+LAB 2 
 
+1. Learning objectives
+-Usage of ssh
+-Hardening an ubuntu server from the CLI
+-Understanding the socket statistics of a server
+-Security reasons to utilize RSA keys 
+-How to edit a service configuration file
+
+LAB 2 SETUP
+install telnet
+install vsftp (enable anonymous login)
+create user01
 
 ssh into ubuntu server
 1. enable automatic updates
