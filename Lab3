@@ -1,7 +1,18 @@
-Ubuntu server (user01:root)
-sudo apt install telnetd -y 
-sudo apt install 
-(change to bridged adapter)
+LAB 3 
+
+1. Learning objectives
+-Usage of iptables for firewall administration
+-Utilizing tcpdump to view network traffic and verify iptable rules
+-Installation of the apache2 web service
+-Ways to check statuses of services
+-Usage of ufw for firewall administration
+-Differneces between iptables and ufw
+
+LAB 3 SETUP
+-create user01
+-sudo apt install telnetd -y 
+-sudo apt install iptables-persistent
+-(change to bridged adapter)
 
 *********iptables setup********
 
@@ -63,7 +74,3 @@ sudo systemctl status apache2
 
 hostname -I to get your IP address
 open your Kali  VM and type in the IP address, coming to the apache webpage
-
-
-
-
