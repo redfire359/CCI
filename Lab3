@@ -1,6 +1,6 @@
 Ubuntu server (user01:root)
 sudo apt install telnetd -y 
-
+sudo apt install 
 (change to bridged adapter)
 
 *********iptables setup********
@@ -31,6 +31,19 @@ sudo tcpdump icmp
 6. Try to ping the machine again
 ping IP 
 
-7. view tcpdump sending echo requests (Coming in) but no repies (Not going out)
+7. view tcpdump sending echo requests (Coming in) but no replies (Not going out)
 
-8. Now block output aswell
+8. set up logging for iptables rules
+iptables -F
+iptables -A INPUT -j LOG --log-prefix "IPtables input: "
+iptables -A INPUT -i icmp
+
+*ping the VM
+cat /var/log/syslog | grep iptables
+**view the input and how you store it
+
+9. Saving iptables
+iptables-save | sudo tee /etc/iptables/rules.v4
+**reboot the server and see that the rules have been restored
+iptables-restore /etc/iptables/rules.v4
+
