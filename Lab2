@@ -1,0 +1,31 @@
+install telnet
+install vsftp (disable anonymous login)
+
+
+ssh into ubuntu server
+1. enable automatic updates
+apt install unattended-upgrades
+dpkg-reconfigure --priority=low unattended-upgrades
+*select yes
+
+2. add an SSH key for your user
+cd ~
+mkdir .ssh && chmod 700 .ssh
+exit ubuntu server
+
+ssh-keygen 
+cd .ssh
+ssh-copy-id user01@IP
+
+vim /etc/ssh/sshd_config
+*uncomment #Port 22 and place a new number (eg. 2422)
+PermitRootLogin No
+PasswordAuthentication No
+
+sudo systemctl restart sshd
+exit
+ssh user01@IP -p port #
+
+3. disable anonymous login on vsftpd
+vim /etc/vsftpd.conf
+sudo systemctl restart vsftpd
