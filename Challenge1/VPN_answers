@@ -1,3 +1,4 @@
 log1 - Stepehen, woodward has multiple login attempts, one of which succedes during the password spray on line 545
 log2 - Holly, Parton has a successful login at 2:00 AM, which indicates an unusual login time
 log3 - Roe, Hendrix has a successful login on line 300 from an unusual IP. The IP has only been used during password spraying attacks
+log4 - Mason, Kemp has several failed password attempts and none of them are followed by a password reset, hacker gets in on line 452
